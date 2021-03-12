@@ -6,13 +6,14 @@ export function useTodo (initialValues) {
   return {
     tasks,
     setTasks,
-    addTask: values => {
+    addTask: (values, actions) => {
       const newTask = {
         body: values.body,
         id: Date.now(),
         isDone: false,
       };
       setTasks([...tasks, newTask]);
+      actions.resetForm();
     },
 
     deleteTasks: id =>
