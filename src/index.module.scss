@@ -1,0 +1,33 @@
+@import 'common/styles/variables';
+@import 'common/styles/breakpoints';
+
+* {
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.position {
+  position: relative;
+}
+
+.sign {
+  text-decoration: none;
+  color: $mainColor;
+  padding: 10px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.77);
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  font-family: $gotham;
+  position: absolute;
+  top: 46px;
+  left: 75%;
+  @media screen and (max-width: $sm) {
+    left: 65%;
+  }
+}
+
+.sign:focus {
+  outline: none;
+}

@@ -1,0 +1,20 @@
+@import 'src/common/styles/variables';
+@import 'src/common/styles/breakpoints';
+
+.login {
+  min-width: 557px;
+  min-height: 64px;
+  color: $mainColor;
+  background-color: #28d2d0;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: uppercase;
+  @media screen and (max-width: $md) {
+    min-width: 350px;
+  }
+  @media screen and (max-width: $sm) {
+    min-width: 270px;
+  }
+}
