@@ -1,8 +1,8 @@
 import React from 'react';
-import { useTodo } from '../../../hooks';
+import { useTodo } from 'hooks';
 import styles from './todoList.module.scss';
 import { Field, Form, Formik } from 'formik';
-import { VALID_INPUT } from '../../../utils/validationSchemas';
+import { VALID_INPUT } from 'utils/validationSchemas';
 
 const initialValues = { body: '' };
 
