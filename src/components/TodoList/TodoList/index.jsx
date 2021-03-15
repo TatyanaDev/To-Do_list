@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTodo } from 'hooks';
 import styles from './todoList.module.scss';
-import { Field, Form, Formik } from 'formik';
+import { Field, Form, Formik, ErrorMessage } from 'formik';
 import { VALID_INPUT } from 'utils/validationSchemas';
 
 const initialValues = { body: '' };
@@ -18,6 +18,11 @@ const Todolist = () => {
         <Form>
           <label>
             <Field name='body' type='text' className={styles.input} />
+            <ErrorMessage
+              name='body'
+              component='span'
+              className={styles.error}
+            />
           </label>
           <button type='submit' className={styles.button}>
             Create task
