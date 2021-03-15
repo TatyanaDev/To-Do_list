@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 export function useTodo (initialValues) {
   const [tasks, setTasks] = useState([...initialValues]);
-
   return {
     tasks,
     setTasks,
@@ -18,6 +17,5 @@ export function useTodo (initialValues) {
 
     deleteTasks: id =>
       setTasks(tasks.filter(currentTask => currentTask.id !== id)),
-    // changeStatus:id=>{},
   };
 }
