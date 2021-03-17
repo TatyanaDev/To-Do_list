@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTodo } from 'hooks';
+import cn from 'classnames';
 import styles from './todoList.module.scss';
 import { Field, Form, Formik, ErrorMessage } from 'formik';
 import { VALID_INPUT } from 'utils/validationSchemas';
@@ -17,7 +18,15 @@ const Todolist = () => {
       >
         <Form>
           <label>
-            <Field name='body' type='text' className={styles.input} />
+            <Field name='body'>
+              {({ field, meta }) => {
+                const classNames = cn(styles.input, {
+                  [styles.validInput]: meta.touched && !meta.error,
+                  [styles.errorInput]: meta.touched && meta.error,
+                });
+                return <input type='text' className={classNames} {...field} />;
+              }}
+            </Field>
             <ErrorMessage
               name='body'
               component='span'
@@ -32,16 +41,16 @@ const Todolist = () => {
       <ul className={styles.containerTask}>
         {tasks.map(value => (
           <li key={value.id} className={styles.task}>
-            <label>
+            <label className={styles.wrapper}>
               <input type='checkbox' className={styles.checkbox} />
-              <span>{value.body}</span>
+              <span className={styles.taskBody}>{value.body}</span>
+              <button
+                className={styles.buttonDelete}
+                onClick={() => deleteTasks(value.id)}
+              >
+                X
+              </button>
             </label>
-            <button
-              className={styles.buttonDelete}
-              onClick={() => deleteTasks(value.id)}
-            >
-              X
-            </button>
           </li>
         ))}
       </ul>

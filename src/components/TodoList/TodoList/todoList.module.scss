@@ -13,10 +13,35 @@
   text-align: start;
 }
 
+.validInput {
+  border-color: green;
+}
+
+.errorInput {
+  border-color: red;
+}
+
 .error {
   position: absolute;
-  top: 140px;
-  left: 40%;
+  top: 161px;
+  left: 28%;
+  max-width: 150px;
+  font-family: sans-serif;
+  line-height: 20px;
+  text-align: start;
+  background-color: #ffeef0;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #f97583;
+}
+
+.error::before {
+  content: '';
+  border-style: solid;
+  border-width: 5px 0 5px 8px;
+  border-color: transparent transparent transparent #f97583;
+  position: absolute;
+  left: 148px;
 }
 
 .button {
@@ -36,16 +61,26 @@
 }
 
 .task {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5px;
+  padding: 8px;
   border: 1px solid #97bbe8;
   margin-bottom: 3px;
 }
 
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .checkbox {
   margin-right: 15px;
+}
+
+.taskBody {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: sans-serif;
 }
 
 .buttonDelete {
