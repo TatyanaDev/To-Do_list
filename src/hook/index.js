@@ -1,22 +1,23 @@
 import { useState } from "react";
 
-export function useTodo(initialValues) {
+export function useToDo(initialValues) {
   const [tasks, setTasks] = useState([...initialValues]);
-  
+
   return {
     tasks,
-    setTasks,
-    addTask: (values, actions) => {
+    addTask: ({ body }, { resetForm }) => {
       const newTask = {
-        body: values.body,
+        body,
         id: Date.now(),
         isDone: false,
       };
+
       setTasks([...tasks, newTask]);
-      actions.resetForm();
+
+      resetForm();
     },
 
-    deleteTasks: (id) =>
-      setTasks(tasks.filter((currentTask) => currentTask.id !== id)),
+    deleteTask: (deleteId) =>
+      setTasks(tasks.filter(({ id }) => id !== deleteId)),
   };
 }

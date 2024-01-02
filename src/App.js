@@ -1,16 +1,5 @@
-import { BrowserRouter, Route } from "react-router-dom";
-import React, { Component } from "react";
-import TodolistPage from "./pages/Todolist";
+import ToDoList from "./page/ToDoList";
 
-class App extends Component {
-  render() {
-    return (
-      <>
-        <BrowserRouter>
-          <Route path="/" component={TodolistPage} />
-        </BrowserRouter>
-      </>
-    );
-  }
-}
+const App = () => <ToDoList />;
+
 export default App;

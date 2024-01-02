@@ -1,92 +1,100 @@
+.form {
+  max-width: max-content;
+  position: relative;
+  margin: 0 auto;
+}
+
 .input {
   border: 2px solid pink;
-  background-color: white;
   padding: 10px 20px;
   border-radius: 5px;
-  margin: 0 auto;
   margin-bottom: 12px;
   outline: none;
-  color: black;
   letter-spacing: 0.5px;
-  font-weight: 500;
   font-size: 18px;
-  text-align: start;
 }
 
 .validInput {
   border-color: green;
 }
 
-.errorInput {
+.invalidInput {
   border-color: red;
 }
 
 .error {
   position: absolute;
-  top: 161px;
-  left: 28%;
-  max-width: 150px;
-  font-family: sans-serif;
+  left: -200px;
+  top: 2px;
   line-height: 20px;
   text-align: start;
+  width: 190px;
   background-color: #ffeef0;
   padding: 10px;
   border-radius: 5px;
   border: 2px solid #f97583;
+
+  &::after {
+    content: "";
+    border-style: solid;
+    border-width: 5px 0 5px 8px;
+    border-color: transparent transparent transparent #f97583;
+    position: absolute;
+    right: -10px;
+    top: 13px;
+  }
 }
 
-.error::before {
-  content: "";
-  border-style: solid;
-  border-width: 5px 0 5px 8px;
-  border-color: transparent transparent transparent #f97583;
-  position: absolute;
-  left: 148px;
-}
-
-.button {
+.createBtn {
+  top: 5px;
   padding: 8px 10px;
   margin-left: 20px;
   border: none;
   border-radius: 20px;
-  background-color: white;
+  border: 2px solid #97bbe8;
+  font-weight: 600;
   color: #97bbe8;
   outline: none;
+  position: absolute;
+  min-width: max-content;
 }
 
-.containerTask {
-  background-color: white;
+.containerTasks {
   max-width: 265px;
-  margin-left: 38%;
+  margin: 0 auto;
 }
 
 .task {
   padding: 8px;
-  border: 1px solid #97bbe8;
+  background-color: white;
+  border: 2px solid #97bbe8;
   margin-bottom: 3px;
+  border-radius: 5px;
 }
 
-.wrapper {
+.wrapperTask {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .checkbox {
-  margin-right: 15px;
+  margin-right: 10px;
+  cursor: pointer;
 }
 
-.taskBody {
+.bodyTask {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  font-family: sans-serif;
 }
 
-.buttonDelete {
-  color: red;
-  background-color: #97bbe8;
+.deleteBtn {
   border: none;
-  border-radius: 5px;
   outline: none;
+  padding: 0;
+
+  img {
+    max-width: 16px;
+  }
 }
