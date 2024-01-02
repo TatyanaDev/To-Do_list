@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-export function useTodo (initialValues) {
+export function useTodo(initialValues) {
   const [tasks, setTasks] = useState([...initialValues]);
+  
   return {
     tasks,
     setTasks,
@@ -15,7 +16,7 @@ export function useTodo (initialValues) {
       actions.resetForm();
     },
 
-    deleteTasks: id =>
-      setTasks(tasks.filter(currentTask => currentTask.id !== id)),
+    deleteTasks: (id) =>
+      setTasks(tasks.filter((currentTask) => currentTask.id !== id)),
   };
 }

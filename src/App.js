@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
-import TodolistPage from './pages/Todolist';
+import { BrowserRouter, Route } from "react-router-dom";
+import React, { Component } from "react";
+import TodolistPage from "./pages/Todolist";
 
 class App extends Component {
-  render () {
+  render() {
     return (
       <>
         <BrowserRouter>
-          <Route path='/' component={TodolistPage} />
+          <Route path="/" component={TodolistPage} />
         </BrowserRouter>
       </>
     );

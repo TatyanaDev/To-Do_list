@@ -1,12 +1,8 @@
 {
-  "name": "new",
+  "name": "to-do_list",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^12.7.1",
-    "classnames": "^2.2.6",
     "formik": "^2.2.6",
     "node-sass": "^5.0.0",
     "react": "^17.0.1",
@@ -41,6 +37,7 @@
     ]
   },
   "devDependencies": {
+    "classnames": "^2.5.1",
     "prettier-standard": "^16.4.1"
   }
 }
