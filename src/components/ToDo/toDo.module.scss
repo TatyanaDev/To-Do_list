@@ -12,6 +12,7 @@
   outline: none;
   letter-spacing: 0.5px;
   font-size: 18px;
+  min-width: 500px;
 }
 
 .validInput {
@@ -60,7 +61,7 @@
 }
 
 .containerTasks {
-  max-width: 265px;
+  max-width: 500px;
   margin: 0 auto;
 }
 
@@ -85,11 +86,20 @@
 
 .bodyTask {
   text-overflow: ellipsis;
-  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
   overflow: hidden;
+  text-align: start;
+  min-width: 431px;
+}
+
+.completedTask {
+  text-decoration: line-through;
 }
 
 .deleteBtn {
+  margin-left: 10px;
   border: none;
   outline: none;
   padding: 0;

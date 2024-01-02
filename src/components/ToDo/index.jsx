@@ -6,7 +6,7 @@ import basket from "./../../icon/basket.png";
 import style from "./toDo.module.scss";
 
 const ToDo = () => {
-  const { tasks, addTask, deleteTask } = useToDo([]);
+  const { tasks, addTask, changeStatusTask, deleteTask } = useToDo();
   const initialValues = { body: "" };
 
   return (
@@ -46,8 +46,19 @@ const ToDo = () => {
         {tasks.map((task) => (
           <li key={task.id} className={style.task}>
             <label className={style.wrapperTask}>
-              <input type="checkbox" className={style.checkbox} />
-              <span className={style.bodyTask}>{task.body}</span>
+              <input
+                type="checkbox"
+                className={style.checkbox}
+                onChange={() => changeStatusTask(task.id)}
+                checked={task.isDone}
+              />
+              <span
+                className={cn(style.bodyTask, {
+                  [style.completedTask]: task.isDone,
+                })}
+              >
+                {task.body}
+              </span>
               <button
                 className={style.deleteBtn}
                 onClick={() => deleteTask(task.id)}
